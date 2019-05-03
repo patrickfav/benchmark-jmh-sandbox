@@ -10,3 +10,45 @@ buildNumber.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+
+
+.DS_Store
+.settings
+.metadata
+bin
+gen
+NewFile.*
+lint.xml
+local.properties
+app.properties
+junit-report.xml
+build
+target
+
+*.dex
+*.ap_
+*.class
+
+out
+proguard
+/RemoteSystemsTempFiles
+.gradle
+Thumbs.db
+
+# ignored intellij
+.idea
+.navigation
+*.iml
+*.ipr
+
+
+# Eclipse project files
+.classpath
+.project
+
+signing.properties
+keystore.jks
+ci-settings.xml
+secrets.tar
+.flattened-pom.xml
+pom.xml.versionsBackup
