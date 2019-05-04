@@ -1,4 +1,4 @@
-package at.favre.lib.idmaskbench;
+package at.favre.benchmark.encoding;
 
 import at.favre.lib.bytes.Bytes;
 import org.openjdk.jmh.annotations.*;

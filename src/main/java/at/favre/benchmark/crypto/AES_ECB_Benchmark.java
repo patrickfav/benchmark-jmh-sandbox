@@ -1,4 +1,4 @@
-package at.favre.lib.idmaskbench;
+package at.favre.benchmark.crypto;
 
 import at.favre.lib.bytes.Bytes;
 import org.openjdk.jmh.annotations.*;
@@ -10,25 +10,13 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.concurrent.TimeUnit;
 
 
-//# Run complete. Total time: 00:00:53
-//
-//        REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
-//        why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
-//        experiments, perform baseline and negative tests that provide experimental control, make sure
-//        the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
-//        Do not assume the numbers tell you what you want them to tell.
-//
-//        Benchmark                   Mode  Cnt   Score   Error  Units
-//        AESBenchmark.decrypt16Bte   avgt    3  49,943 ± 4,442  ns/op
-//        AESBenchmark.encrypt16Byte  avgt    3  49,479 ± 1,238  ns/op
-
 @State(Scope.Thread)
 @Fork(1)
 @Warmup(iterations = 2, time = 4)
 @Measurement(iterations = 3, time = 10)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-public class AESBenchmark {
+public class AES_ECB_Benchmark {
 
     @State(Scope.Thread)
     public static class BenchmarkState {
@@ -66,7 +54,7 @@ public class AESBenchmark {
     }
 
     @Benchmark
-    public void decrypt16Bte(BenchmarkState state, Blackhole blackhole) {
+    public void decrypt16Byte(BenchmarkState state, Blackhole blackhole) {
         try {
             state.cipher.init(Cipher.DECRYPT_MODE, state.key);
             blackhole.consume(state.cipher.doFinal(state.enc));

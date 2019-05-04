@@ -1,0 +1,66 @@
+"C:\Program Files\AdoptOpenJDK\jdk-8.0.202.08\bin\java.exe" -Dfile.encoding=UTF-8 -classpath C:\Users\PatrickF\workspaces\benchmark-jmh-sandbox\target\classes;C:\Users\PatrickF\.m2\repository\org\openjdk\jmh\jmh-core\1.21\jmh-core-1.21.jar;C:\Users\PatrickF\.m2\repository\net\sf\jopt-simple\jopt-simple\4.6\jopt-simple-4.6.jar;C:\Users\PatrickF\.m2\repository\org\apache\commons\commons-math3\3.2\commons-math3-3.2.jar;C:\Users\PatrickF\.m2\repository\at\favre\lib\bytes\1.1.0\bytes-1.1.0.jar org.openjdk.jmh.Main at.favre.benchmark.crypto.AES_GCM_Benchmark.*
+# JMH version: 1.21
+# VM version: JDK 1.8.0_202, OpenJDK 64-Bit Server VM, 25.202-b08
+# VM invoker: C:\Program Files\AdoptOpenJDK\jdk-8.0.202.08\jre\bin\java.exe
+# VM options: -Dfile.encoding=UTF-8
+# Warmup: 2 iterations, 4 s each
+# Measurement: 3 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: at.favre.benchmark.crypto.AES_GCM_Benchmark.decrypt16Byte
+
+# Run progress: 0,00% complete, ETA 00:01:16
+# Fork: 1 of 1
+# Warmup Iteration   1: 863,885 ns/op
+# Warmup Iteration   2: 744,337 ns/op
+Iteration   1: 744,181 ns/op
+Iteration   2: 751,112 ns/op
+Iteration   3: 749,579 ns/op
+
+
+Result "at.favre.benchmark.crypto.AES_GCM_Benchmark.decrypt16Byte":
+  748,291 ±(99.9%) 66,422 ns/op [Average]
+  (min, avg, max) = (744,181, 748,291, 751,112), stdev = 3,641
+  CI (99.9%): [681,869, 814,713] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 1.8.0_202, OpenJDK 64-Bit Server VM, 25.202-b08
+# VM invoker: C:\Program Files\AdoptOpenJDK\jdk-8.0.202.08\jre\bin\java.exe
+# VM options: -Dfile.encoding=UTF-8
+# Warmup: 2 iterations, 4 s each
+# Measurement: 3 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: at.favre.benchmark.crypto.AES_GCM_Benchmark.encrypt16Byte
+
+# Run progress: 50,00% complete, ETA 00:00:38
+# Fork: 1 of 1
+# Warmup Iteration   1: 905,677 ns/op
+# Warmup Iteration   2: 864,015 ns/op
+Iteration   1: 879,582 ns/op
+Iteration   2: 885,745 ns/op
+Iteration   3: 866,819 ns/op
+
+
+Result "at.favre.benchmark.crypto.AES_GCM_Benchmark.encrypt16Byte":
+  877,382 ±(99.9%) 176,096 ns/op [Average]
+  (min, avg, max) = (866,819, 877,382, 885,745), stdev = 9,652
+  CI (99.9%): [701,286, 1053,478] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:01:17
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                        Mode  Cnt    Score     Error  Units
+AES_GCM_Benchmark.decrypt16Byte  avgt    3  748,291 ±  66,422  ns/op
+AES_GCM_Benchmark.encrypt16Byte  avgt    3  877,382 ± 176,096  ns/op
+
+Process finished with exit code 0
